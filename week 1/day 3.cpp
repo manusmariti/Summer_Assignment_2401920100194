@@ -66,20 +66,3 @@ public:
         return maxWater;
     }
 };
-QUES OOPS Both the classes should have two instance variables as specified below.
-Instance variables Data type
-age int
-bookType String
-ANS class KidUsers implements LibraryUser {
-    int age;
-    String bookType;
-
-    // methods
-}
-
-class AdultUser implements LibraryUser {
-    int age;
-    String bookType;
-
-    // methods
-}
