@@ -1,9 +1,12 @@
 LibraryUser.java
+  
   interface LibraryUser {
     void registerAccount();
     void requestBook();
 }
+
 KidUsers.java
+  
 class KidUsers implements LibraryUser {
 
     int age;
@@ -27,7 +30,9 @@ class KidUsers implements LibraryUser {
         }
     }
 }
+
 AdultUser.java
+  
   class AdultUser implements LibraryUser {
 
     int age;
@@ -51,7 +56,9 @@ AdultUser.java
         }
     }
 }
+
 LibraryInterfaceDemo.java
+  
   public class LibraryInterfaceDemo {
 
     public static void main(String[] args) {
