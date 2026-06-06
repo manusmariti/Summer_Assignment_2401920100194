@@ -1,11 +1,11 @@
-LibraryUser.java
+//LibraryUser.java
   
   interface LibraryUser {
     void registerAccount();
     void requestBook();
 }
 
-KidUsers.java
+//KidUsers.java
   
 class KidUsers implements LibraryUser {
 
@@ -31,7 +31,7 @@ class KidUsers implements LibraryUser {
     }
 }
 
-AdultUser.java
+//AdultUser.java
   
   class AdultUser implements LibraryUser {
 
@@ -57,7 +57,7 @@ AdultUser.java
     }
 }
 
-LibraryInterfaceDemo.java
+//LibraryInterfaceDemo.java
   
   public class LibraryInterfaceDemo {
 
