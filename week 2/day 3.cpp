@@ -14,52 +14,26 @@ public:
     }
 };
 
-QUES PERMUTATION IN STRING
+QUES IS SUBSEQUENCE
 class Solution {
 public:
-    bool checkInclusion(string s1, string s2) {
-        int n = s1.size();
-        int m = s2.size();
-        if (n > m) return false;
-        vector<int> freq1(26, 0);
-        vector<int> freq2(26, 0);
-        for (int i = 0; i < n; i++) {
-            freq1[s1[i] - 'a']++;
-            freq2[s2[i] - 'a']++;
-        }
-        if (freq1 == freq2) return true;
-        for (int i = n; i < m; i++) {
-            freq2[s2[i] - 'a']++;
-            freq2[s2[i - n] - 'a']--;
-            if (freq1 == freq2) return true;
-        }
-        return false;
-    }
-};
-QUES FIND ALL ANAGRAM IN A STRING 
-class Solution {
-public:
-    vector<int> findAnagrams(string s, string p) {
-        vector<int> ans;
-        int n = s.size();
-        int m = p.size();
-        if (m > n) return ans;
-        vector<int> freqP(26, 0);
-        vector<int> freqS(26, 0);
-        for (int i = 0; i < m; i++) {
-            freqP[p[i] - 'a']++;
-            freqS[s[i] - 'a']++;
-        }
-        if (freqP == freqS) {
-            ans.push_back(0);
-        }
-        for (int i = m; i < n; i++) {
-            freqS[s[i] - 'a']++;
-            freqS[s[i - m] - 'a']--;
-            if (freqP == freqS) {
-                ans.push_back(i - m + 1);
+    bool isSubsequence(string s, string t) {
+        int i = 0;
+        for (char c : t) {
+            if (i < s.size() && s[i] == c) {
+                i++;
             }
         }
-        return ans;
+        return i == s.size();
     }
 };
+QUES REPEATED STRING PATTERN
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        string temp = s + s;
+        temp = temp.substr(1, temp.size() - 2);
+        return temp.find(s) != string::npos;
+    }
+};
+        
